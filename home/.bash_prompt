@@ -3,6 +3,9 @@ YELLOW="\[\033[1;93m\]"
 GREEN="\[\033[1;92m\]"
 BLUE="\[\033[1;94m\]"
 WHITE="\[\033[1;97m\]"
+GRAY="\[\033[1;30m\]"
+PINK="\[\033[1;35m\]"
+ORANGE="\[\033[33;1m\]"
 COLOR_RESET="\[\e[0m\]"
 
 function is_git_repository {
@@ -50,8 +53,14 @@ function set_bash_prompt {
   else
     GIT_PROMPT=""
   fi
-
-  PS1="${WHITE}\@${COLOR_RESET} \w${GIT_PROMPT} $ "
+  # ${PINK}△ ▽
+  PS1="${BLUE}\@${COLOR_RESET} \w${GIT_PROMPT} $ "
 }
 
 PROMPT_COMMAND=set_bash_prompt
+
+function goog {
+  local IFS='+'
+  local query="$*"
+  open "https://www.google.com/#q=${query}"
+}
