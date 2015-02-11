@@ -1,6 +1,3 @@
-# Homebrew Doctor
-export PATH="/usr/local/bin:$PATH"
-export PATH="$PATH:/usr/local/smlnj/bin"
 # Editors
 export EDITOR="subl -n"
 export BUNDLER_EDITOR="subl -n"
@@ -35,6 +32,8 @@ alias home="cd ~"
 alias ..="cd ../"
 alias ...="cd ../.."
 alias dt="cd ~/Desktop"
+alias dev="cd ~/devmynd"
+alias sas="cd ~/sasha"
 alias bp="$EDITOR ~/.bash_profile"
 alias be="bundle exec "
 alias clock="date '+%l:%M %p - %m/%d %a'"
@@ -52,14 +51,17 @@ alias turnt="gosleap"
 
 # Git
 alias gs="git status"
-alias stat="status"
+alias gst="gs"
 alias ga="git add"
 alias gap="git add . -p"
 alias gc="git commit"
+alias gcm="git commit -m"
+alias glol="git log --oneline -6"
 alias q="exit"
 alias ship="git push"
-alias push="ship"
 alias shipit="ship"
+alias push="ship"
+alias gpr="git pull --rebase"
 
 # Derps
 alias bindle="bundle"
@@ -76,6 +78,7 @@ alias snips="ls -a ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User
 alias snippets="cd ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/snippets"
 
 # Rails
+alias take="rake teaspoon"
 alias rake="be rake"
 alias r="be rspec"
 alias rspec="be rspec"
@@ -95,6 +98,7 @@ alias drop="be rake db:drop"
 alias cmps="be rake db:create db:migrate db:test:prepare db:seed"
 alias dcmps="be rake db:drop db:create db:migrate db:test:prepare db:seed"
 alias yolo="dcmps"
+alias routes="rake routes"
 
 # POSTGRES
 alias pg_start="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start"
@@ -102,3 +106,13 @@ alias pg_stop="pg_ctl -D /usr/local/var/postgres stop -s -m fast"
 alias fml="be foreman start -f Procfile.local"
 
 
+# Docker
+eval $(boot2docker shellinit 2> /dev/null)
+export DOCKER_IP=$(boot2docker ip 2>/dev/null)
+
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+  . $(brew --prefix)/etc/bash_completion
+fi
+# Homebrew Doctor
+export PATH="/usr/local/bin:$PATH"
+export PATH="$PATH:/usr/local/smlnj/bin"
