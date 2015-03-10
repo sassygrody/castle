@@ -10,21 +10,22 @@
   cob = checkout -b
   st = status
   br = branch
-  ci = commit 
+  ci = commit
   pom = push origin master
   phm = push heroku master
   pdm = push devmynd master
   pl = pull --rebase
-  di = diff --color-words
+  df = diff --color-words
   weekreport = shortlog --since=1.weeks --author=sassygrody
   gl = log --graph --abbrev-commit --pretty=oneline --decorate
+  ll = log --graph --pretty=format:'%Cred%h%Creset - %C(yellow)%d%Cgreen(%cr) %C(bold blue)<%an> %Creset %s' --abbrev-commit --date=relative --max-count=20
   this = !git init && git add . && git commit -m "Initial commit"
   amend = !git log -n 1 --pretty=tformat:%s%n%n%b | git commit -F - --amend
   empty = commit --allow-empty -am "Empty commit"
 [color]
   ui = true
 [core]
-  excludesfile = ~/.gitignore
+	excludesfile = /Users/sasha/.gitignore
   editor = subl -n -w
 [push]
   default = upstream

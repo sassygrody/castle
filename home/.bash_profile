@@ -2,10 +2,6 @@
 export EDITOR="subl -n"
 export BUNDLER_EDITOR="subl -n"
 
-# Rbenv
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
-
 # Bash Completion
 if [ -f /usr/local/etc/bash_completion ]; then
   source /usr/local/etc/bash_completion
@@ -20,9 +16,6 @@ fi
 export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
 
-# Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
-
 # Vagrant
 ulimit -n 4048
 
@@ -33,6 +26,7 @@ alias ..="cd ../"
 alias ...="cd ../.."
 alias dt="cd ~/Desktop"
 alias dev="cd ~/devmynd"
+alias viv="cd ~/devmynd/vivor"
 alias sas="cd ~/sasha"
 alias bp="$EDITOR ~/.bash_profile"
 alias be="bundle exec "
@@ -56,11 +50,11 @@ alias ga="git add"
 alias gap="git add . -p"
 alias gc="git commit"
 alias gcm="git commit -m"
-alias glol="git log --oneline -6"
+alias glol="git log --oneline -10"
 alias q="exit"
 alias ship="git push"
-alias shipit="ship"
 alias push="ship"
+alias pushit="push"
 alias gpr="git pull --rebase"
 
 # Derps
@@ -82,6 +76,8 @@ alias take="rake teaspoon"
 alias rake="be rake"
 alias r="be rspec"
 alias rspec="be rspec"
+alias rspec="be rspec"
+alias br="bin/rspec"
 alias migrate="be rake db:migrate db:test:prepare"
 alias grate="migrate"
 alias rollback="be rake db:rollback"
@@ -116,3 +112,19 @@ fi
 # Homebrew Doctor
 export PATH="/usr/local/bin:$PATH"
 export PATH="$PATH:/usr/local/smlnj/bin"
+
+# Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
+
+# Rbenv
+export PATH="$HOME/.rbenv/bin:$PATH"
+
+eval "$(rbenv init -)"
+
+function s {
+  if [ -n "$1" ]; then
+    open "$1" -a Sublime\ Text
+  else
+    open . -a Sublime\ Text
+  fi
+}
