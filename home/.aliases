@@ -8,8 +8,9 @@ alias dev="cd ~/devmynd"
 alias viv="cd ~/devmynd/vivor"
 alias mme="cd ~/devmynd/mme"
 alias sas="cd ~/sasha"
+alias coop="cd ~/sasha/coop"
 alias bp="$EDITOR ~/.bash_profile"
-alias aliases="$EDITOR ~/.aliases"
+alias ass="$EDITOR ~/.aliases"
 alias be="bundle exec "
 alias clock="date '+%l:%M %p - %m/%d %a'"
 alias la="ls -a"
@@ -23,6 +24,7 @@ alias chrome="open -a 'Google Chrome'"
 alias chro="chrome"
 alias gmail="chrome http://www.gmail.com"
 alias turnt="gosleap"
+alias hi="turnt"
 
 # Git
 alias gs="git status"
@@ -54,14 +56,13 @@ alias snippets="cd ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User
 
 # Rails
 alias take="rake teaspoon"
-alias rake="be rake"
+alias brake="be rake"
 alias r="be rspec"
 alias br="bin/rspec"
 alias migrate="be rake db:migrate db:test:prepare"
 alias grate="migrate"
 alias rollback="be rake db:rollback"
 alias prepare="be rake db:test:prepare"
-alias reset="be rake db:reset"
 alias unicorn="be unicorn -p 3000"
 alias rint="be rake spec:integration"
 alias rs="rails server"
@@ -74,12 +75,19 @@ alias cmps="be rake db:create db:migrate db:test:prepare db:seed"
 alias dcmps="be rake db:drop db:create db:migrate db:test:prepare db:seed"
 alias yolo="dcmps"
 alias routes="rake routes"
+alias rude="rubocop -a"
+alias ftp="rubocop -a && rake"
+alias ruborake="ftp"
 
 # POSTGRES
 alias pg_start="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start"
 alias pg_stop="pg_ctl -D /usr/local/var/postgres stop -s -m fast"
 alias fml="be foreman start -f Procfile.local"
 
+# HEROKU
+alias herorun="heroku run rails console"
+alias hrun="herorun"
+alias herorunm="heroku run rails console -a mentor-match-staging"
 
 # Docker
 export DOCKER_IP=192.168.59.103

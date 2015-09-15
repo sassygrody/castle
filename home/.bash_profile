@@ -65,6 +65,8 @@ if [ -f $(brew --prefix)/etc/bash_completion ]; then
   . $(brew --prefix)/etc/bash_completion
 fi
 
+# Sqlite3
+export PATH="$(brew --prefix sqlite)/bin:$PATH"
 
 ########## SASHA ########
 # # Editors

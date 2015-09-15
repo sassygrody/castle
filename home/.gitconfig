@@ -9,6 +9,7 @@
   co = checkout
   cob = checkout -b
   st = status
+  stat = status
   br = branch
   ci = commit
   pom = push origin master
