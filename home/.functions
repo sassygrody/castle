@@ -103,11 +103,24 @@ function hit {
 }
 
 function s {
-  if [ -n "$1" ]; then
-    open "$1" -a Sublime\ Text
-  else
-    open . -a Sublime\ Text
-  fi
+ local file; file="."
+ local flag; flag="-n"
+ local project_file; project_file=$(find . -maxdepth 1 -type f -name "*.sublime-project")
+
+ if [ -n "$project_file" ]; then
+   subl --project "$project_file"
+ else
+   if [[ -n "$1" && "$1" != "-a" ]]; then
+     touch "$1"
+     file="$1"
+   fi
+
+   if [[ "$1" == "-a" || "$2" == "-a" ]]; then
+     flag="-a"
+   fi
+
+   subl "$file" "$flag"
+ fi
 }
 
 function sp {
@@ -233,3 +246,4 @@ function copy {
     fi
   fi
 }
+

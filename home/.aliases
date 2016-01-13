@@ -5,10 +5,8 @@ alias ..="cd ../"
 alias ...="cd ../.."
 alias dt="cd ~/Desktop"
 alias dev="cd ~/devmynd"
-alias viv="cd ~/devmynd/vivor"
-alias mme="cd ~/devmynd/mme"
+alias whym="cd ~/devmynd/whym"
 alias sas="cd ~/sasha"
-alias coop="cd ~/sasha/coop"
 alias bp="$EDITOR ~/.bash_profile"
 alias ass="$EDITOR ~/.aliases"
 alias be="bundle exec "
@@ -17,6 +15,7 @@ alias la="ls -a"
 alias ll="ls -la"
 alias tlog="tail -f log/development.log"
 alias aliasup="source ~/.bash_profile"
+alias castle="s /Users/sasha/.homesick/repos/castle/"
 
 # Application Shortcuts
 alias f="open -a Finder ./"
@@ -29,15 +28,15 @@ alias hi="turnt"
 # Git
 alias gs="git status"
 alias gst="gs"
+alias st="gs"
 alias ga="git add"
 alias gap="git add . -p"
-alias gc="git commit"
+alias gc="git commit -m"
 alias gcm="git commit -m"
 alias glol="git log --oneline -10"
 alias q="exit"
 alias ship="git push"
 alias push="ship"
-alias pushit="push"
 alias gpr="git pull --rebase"
 
 # Derps
@@ -50,7 +49,7 @@ alias gti="git"
 alias rkae="be rake"
 
 # Snips
-alias delete="rm -Rf"
+alias delete="rm -rf"
 alias snips="ls -a ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/snippets | cat"
 alias snippets="cd ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/snippets"
 
@@ -78,10 +77,13 @@ alias routes="rake routes"
 alias rude="rubocop -a"
 alias ftp="rubocop -a && rake"
 alias ruborake="ftp"
+alias bi="bundle install"
 
 # POSTGRES
-alias pg_start="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start"
+alias pg_start_background="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start"
+alias pg_start="postgres -D /usr/local/var/postgres"
 alias pg_stop="pg_ctl -D /usr/local/var/postgres stop -s -m fast"
+alias pg_status="pg_ctl -D /usr/local/var/postgres status"
 alias fml="be foreman start -f Procfile.local"
 
 # HEROKU
@@ -89,11 +91,6 @@ alias herorun="heroku run rails console"
 alias hrun="herorun"
 alias herorunm="heroku run rails console -a mentor-match-staging"
 
-# Docker
-export DOCKER_IP=192.168.59.103
-export DOCKER_TLS_VERIFY=1
-export DOCKER_HOST=tcp://192.168.59.103:2376
-export DOCKER_CERT_PATH=/Users/sasha/.boot2docker/certs/boot2docker-vm
-
+# DOCKER
 alias dk="boot2docker"
 alias dc="docker-compose"
