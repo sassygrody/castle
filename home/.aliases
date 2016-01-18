@@ -8,7 +8,7 @@ alias dev="cd ~/devmynd"
 alias whym="cd ~/devmynd/whym"
 alias sas="cd ~/sasha"
 alias bp="$EDITOR ~/.bash_profile"
-alias ass="$EDITOR ~/.aliases"
+alias als="$EDITOR ~/.aliases"
 alias be="bundle exec "
 alias clock="date '+%l:%M %p - %m/%d %a'"
 alias la="ls -a"
@@ -50,7 +50,8 @@ alias rkae="be rake"
 
 # Snips
 alias delete="rm -rf"
-alias snips="ls -a ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/snippets | cat"
+alias snips="cd ~/Fort/home/.sublime/snippets"
+alias snipps="ls -a ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/snippets | cat"
 alias snippets="cd ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/snippets"
 
 # Rails
@@ -78,6 +79,7 @@ alias rude="rubocop -a"
 alias ftp="rubocop -a && rake"
 alias ruborake="ftp"
 alias bi="bundle install"
+alias ni="npm install"
 
 # POSTGRES
 alias pg_start_background="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start"
