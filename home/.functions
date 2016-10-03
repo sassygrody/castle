@@ -170,14 +170,6 @@ function o {
   fi
 }
 
-function hs {
-  # bash cries about trying to symlink . and .. files but it works
-  # ln -sf ~/Fort/home/* ~/ and ln -sf ~/Fort/home/ ~/ don't work
-  ln -sf ~/Fort/home/.* ~/
-  ln -sf ~/Fort/home/.sublime/* ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/
-  reload
-}
-
 function a {
   less ~/.aliases
 }
@@ -207,27 +199,27 @@ function ga {
   fi
 }
 
-function snip {
-  if [ -n "$1" ]; then
-    if [ ! -f ~/Fort/home/.sublime/snippets/"$1".sublime-snippet ]; then
-      touch ~/Fort/home/.sublime/snippets/"$1".sublime-snippet
-      cat ~/Fort/home/.sublime/snippets/basic.sublime-snippet > ~/Fort/home/.sublime/snippets/"$1".sublime-snippet
-    fi
-    s ~/Fort/home/.sublime/snippets/"$1".sublime-snippet
-  else
-    echo "you need to put the name of the file you're trying to create"
-    echo "in the snippets directory of .sublime"
-    echo "path to: ~/Fort/home/.sublime/snippets"
-  fi
-}
+# function snip {
+#   if [ -n "$1" ]; then
+#     if [ ! -f ~/Fort/home/.sublime/snippets/"$1".sublime-snippet ]; then
+#       touch ~/Fort/home/.sublime/snippets/"$1".sublime-snippet
+#       cat ~/Fort/home/.sublime/snippets/basic.sublime-snippet > ~/Fort/home/.sublime/snippets/"$1".sublime-snippet
+#     fi
+#     s ~/Fort/home/.sublime/snippets/"$1".sublime-snippet
+#   else
+#     echo "you need to put the name of the file you're trying to create"
+#     echo "in the snippets directory of .sublime"
+#     echo "path to: ~/Fort/home/.sublime/snippets"
+#   fi
+# }
 
-function remove_snip {
-  if [ -n "$1" ]; then
-    rm ~/Fort/home/.sublime/snippets/"$1".sublime-snippet
-  else
-    echo 'needs the name of a snippet file (w/out .sublime.snippet)'
-  fi
-}
+# function remove_snip {
+#   if [ -n "$1" ]; then
+#     rm ~/Fort/home/.sublime/snippets/"$1".sublime-snippet
+#   else
+#     echo 'needs the name of a snippet file (w/out .sublime.snippet)'
+#   fi
+# }
 
 function copy {
   if [ -n "$1" ]; then

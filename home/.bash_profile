@@ -44,7 +44,7 @@ export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
 
 # Node.js
-export NODE_PATH="/usr/local/lib/node"
+export NODE_PATH="/usr/local/lib/node_modules"
 export PATH="/usr/local/share/npm/bin:$PATH"
 
 # For Homebrew
