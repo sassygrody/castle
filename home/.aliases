@@ -21,6 +21,8 @@ alias castle="s /Users/sasha/.homesick/repos/castle/"
 alias f="open -a Finder ./"
 alias turnt="gosleap"
 alias hi="turnt"
+alias xcode="open -a Xcode"
+alias webstorm="open -a Webstorm"
 
 # Git
 alias gs="git status"

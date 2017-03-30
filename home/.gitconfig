@@ -1,32 +1,47 @@
 [user]
 	name = Sasha Grodzins
 	email = sasha.grodzins@devmynd.com
+
 [github]
   user = sassygrody
+
 [apply]
   whitespace = nowarn
+
 [alias]
   co = checkout
   cob = checkout -b
+  cbr = checkout -b
+
   st = status
   stat = status
   br = branch
+
   ci = commit
+  cim = commit -m
+
   pom = push origin master
   phm = push heroku master
   pdm = push devmynd master
+
   pl = pull --rebase
+
   df = diff --color-words
-  weekreport = shortlog --since=1.weeks --author=sassygrody
+
   gl = log --graph --abbrev-commit --pretty=oneline --decorate
+
   ll = log --graph --pretty=format:'%Cred%h%Creset - %C(yellow)%d%Cgreen(%cr) %C(bold blue)<%an> %Creset %s' --abbrev-commit --date=relative --max-count=20
+  lll = log --graph --pretty=format:'%Cred%h%Creset - %C(yellow)%d%Cgreen(%cr) %C(bold blue)<%an> %Creset %s' --abbrev-commit --date=relative --max-count=100
   this = !git init && git add . && git commit -m "Initial commit"
   amend = !git log -n 1 --pretty=tformat:%s%n%n%b | git commit -F - --amend
   empty = commit --allow-empty -am "Empty commit"
+
 [color]
   ui = true
+
 [core]
 	excludesfile = /Users/sasha/.gitignore
-  editor = subl -n -w
+  editor = vim
+
 [push]
   default = upstream

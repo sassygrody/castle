@@ -1,6 +1,9 @@
 # Editors
-export EDITOR="s"
-export BUNDLER_EDITOR="open -a  Sublime\ Text"
+export EDITOR="vim"
+export BUNDLER_EDITOR="vim"
+
+# Go Path
+export GOPATH="/Users/sasha/sasha/go"
 
 # Include alias file
 if [ -f ~/.aliases ]; then
@@ -68,12 +71,12 @@ fi
 export PATH="$(brew --prefix sqlite)/bin:$PATH"
 
 # Docker-machine / VBoxManager
-function forward_vm_port {
-   VBoxManage modifyvm "dev" --natpf1 "tcp-port$1,tcp,,$1,,$1";
-   VBoxManage modifyvm "dev" --natpf1 "udp-port$1,udp,,$1,,$1";
-}
-
-function unforward_vm_port {
-   VBoxManage modifyvm "dev" --natpf1 delete "tcp-port$1";
-   VBoxManage modifyvm "dev" --natpf1 delete "udp-port$1";
-}
+# function forward_vm_port {
+#    VBoxManage modifyvm "dev" --natpf1 "tcp-port$1,tcp,,$1,,$1";
+#    VBoxManage modifyvm "dev" --natpf1 "udp-port$1,udp,,$1,,$1";
+# }
+#
+# function unforward_vm_port {
+#    VBoxManage modifyvm "dev" --natpf1 delete "tcp-port$1";
+#    VBoxManage modifyvm "dev" --natpf1 delete "udp-port$1";
+# }

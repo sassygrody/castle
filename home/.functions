@@ -105,10 +105,10 @@ function hit {
 function s {
  local file; file="."
  local flag; flag="-n"
- local project_file; project_file=$(find . -maxdepth 1 -type f -name "*.sublime-project")
+ local project_file; project_file=$(find . -maxdepth 1 -type f -name "*.atom")
 
  if [ -n "$project_file" ]; then
-   subl --project "$project_file"
+   atom --project "$project_file"
  else
    if [[ -n "$1" && "$1" != "-a" ]]; then
      touch "$1"
@@ -119,7 +119,7 @@ function s {
      flag="-a"
    fi
 
-   subl "$file" "$flag"
+   atom "$file" "$flag"
  fi
 }
 
@@ -194,32 +194,10 @@ function reload {
 function ga {
   if [ -n "$1" ]; then
     git add "$1"
-  else
-    git add --all
+  # else
+  #   git add --all
   fi
 }
-
-# function snip {
-#   if [ -n "$1" ]; then
-#     if [ ! -f ~/Fort/home/.sublime/snippets/"$1".sublime-snippet ]; then
-#       touch ~/Fort/home/.sublime/snippets/"$1".sublime-snippet
-#       cat ~/Fort/home/.sublime/snippets/basic.sublime-snippet > ~/Fort/home/.sublime/snippets/"$1".sublime-snippet
-#     fi
-#     s ~/Fort/home/.sublime/snippets/"$1".sublime-snippet
-#   else
-#     echo "you need to put the name of the file you're trying to create"
-#     echo "in the snippets directory of .sublime"
-#     echo "path to: ~/Fort/home/.sublime/snippets"
-#   fi
-# }
-
-# function remove_snip {
-#   if [ -n "$1" ]; then
-#     rm ~/Fort/home/.sublime/snippets/"$1".sublime-snippet
-#   else
-#     echo 'needs the name of a snippet file (w/out .sublime.snippet)'
-#   fi
-# }
 
 function copy {
   if [ -n "$1" ]; then
