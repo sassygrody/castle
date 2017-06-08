@@ -14,7 +14,8 @@ alias clock="date '+%l:%M %p - %m/%d %a'"
 alias la="ls -a"
 alias ll="ls -la"
 alias tlog="tail -f log/development.log"
-alias aliasup="source ~/.bash_profile"
+alias aliasup="source ~/.aliases"
+alias bashup="source ~/.bash_profile"
 alias castle="s /Users/sasha/.homesick/repos/castle/"
 
 # Application Shortcuts
@@ -69,13 +70,15 @@ alias ftp="rubocop -a && rake"
 alias ruborake="ftp"
 alias bi="bundle install"
 alias ni="npm install"
+alias setenv="bin/rails db:environment:set RAILS_ENV=development"
 
 # POSTGRES
 alias pg_start_background="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start"
 # alias pg_start="postgres -D /usr/local/var/postgres"
-alias pg_start="pg_ctl -D /usr/local/var/postgres -l logfile start"
+alias pg_start="pg_ctl -D /usr/local/var/postgres start"
 alias pg_stop="pg_ctl -D /usr/local/var/postgres stop -s -m fast"
 alias pg_status="pg_ctl -D /usr/local/var/postgres status"
+alias pg_broken="rm -rf /usr/local/var/postgres && initdb /usr/local/var/postgres -E utf8"
 
 # HEROKU
 alias herorun="heroku run rails console"
@@ -84,3 +87,6 @@ alias herobside="heroku run rails console -a brideside-checkout-staging"
 
 # Scheme
 alias scheme="rlwrap -r -c -f /Users/sasha/Devdocs/mit_scheme_bindings.txt scheme"
+
+# Yarn
+alias ys="yarn start"
