@@ -7,22 +7,12 @@ if [ -f ~/.aliases ]; then
  source ~/.aliases
 fi
 
-# Bash Completion
-if [ -f $(brew --prefix)/etc/bash_completion ]; then
-  . $(brew --prefix)/etc/bash_completion
-fi
-
-# Bash Functions
-if [ -f ~/.functions ]; then
-  source ~/.functions
-fi
-
 # Bash Prompt
-if [ -f ~/.powerline_prompt ]; then
-  source ~/.powerline_prompt
-elif [ -f ~/.bash_prompt]; then
-  source ~/.bash_prompt
-fi
+# if [ -f ~/.powerline_prompt ]; then
+#   source ~/.powerline_prompt
+# if [ -f ~/.bash_prompt ]; then
+#   source ~/.bash_prompt
+# fi
 
 # Node.js
 export NODE_PATH="/usr/local/lib/node_modules"
@@ -52,3 +42,6 @@ export PATH="$(brew --prefix yarn)/bin:$PATH"
 
 # Go Path
 # export GOPATH="/Users/sasha/sasha/go"
+
+# Android SDK
+export ANDROID_SDK_ROOT=$HOME/Library/Android/sdk
