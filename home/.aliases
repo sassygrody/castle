@@ -1,4 +1,6 @@
 # Shortcuts
+alias slides="cd ~/Documents/rails_conf_slides"
+alias rails-conf="cd ~/sasha/conf-talks/rails-conf"
 alias home="cd ~"
 alias ..="cd ../"
 alias ...="cd ../../"
@@ -6,17 +8,25 @@ alias dev="cd ~/devmynd"
 alias sas="cd ~/sasha"
 
 # Projects Shortcuts
-alias nex="cd ~/devmynd/nex"
+alias mirs="cd ~/devmynd/mirs"
+alias mirsb="cd ~/devmynd/mirs/mirs-backend-yavin"
+alias mirsf="cd ~/devmynd/mirs/mirs-frontend-xwing"
+alias graph="rake graph && cp schema.json ../mirs-frontend-xwing/."
+alias graphrelay="rake graph && cp schema.json ../mirs-frontend-xwing/. && mirsf && yarn relay && mirsb"
 
 alias s="subl"
-alias als="$EDITOR ~/.aliases"
-alias be="bundle exec "
+alias als="s ~/.aliases"
 alias la="ls -a"
 alias ll="ls -la"
 alias tlog="tail -f log/development.log"
 alias aliasup="source ~/.aliases"
-alias zshup="source ~/.zshrc ; echo '...sourced zsh...'"
-alias castle="s /Users/sasha/.homesick/repos/castle/"
+alias zshup="source ~/.zshrc ; echo '...sourced zshrc...'"
+alias zup="zshup"
+alias zshconfig="subl ~/.zshrc"
+alias zshthemes="subl ~/.oh-my-zsh"
+
+# Sublime
+alias snippets="cd ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/snippets/"
 
 # Application Shortcuts
 alias f="open -a Finder ./"
@@ -31,8 +41,12 @@ alias st="gs"
 alias gap="git add . -p"
 alias gcm="git commit -m"
 alias glog="git log --oneline -20"
+alias gcom="git checkout master"
+alias gco="git checkout"
 alias q="exit"
 alias gpr="git pull --rebase"
+alias delete_all_branches_probably_dont_use="git branch | grep -v "master" | xargs git branch -D "
+alias y="echo 'All good!'"
 
 # Derps
 alias bindle="bundle"
@@ -44,9 +58,14 @@ alias gti="git"
 alias rkae="be rake"
 
 # Rails
-alias rspec="be rspec"
-alias r="be rspec"
+alias be="bundle exec"
+alias rake="bundle exec rake"
+alias rspec="bundle exec rspec"
+alias brspec="bin/rspec"
+alias r="bundle exec rspec"
 alias br="bin/rspec"
+alias seed="rails db:seed"
+alias create="rails db:create"
 alias migrate="rails db:migrate db:test:prepare"
 alias grate="migrate"
 alias rollback="rails db:rollback"
@@ -54,14 +73,11 @@ alias prepare="rails db:test:prepare"
 alias rs="rails server"
 alias rc="rails console"
 alias c="rc"
-alias seed="rails db:seed"
-alias create="rails db:create"
 alias routes="rake routes"
-alias rude="rubocop -a"
-alias ftp="rubocop -a && rake"
-alias ruborake="ftp"
+alias rubocop="bundle exec rubocop"
+alias rude="bundle exec rubocop -a"
+alias copa="rude"
 alias bi="bundle install"
-alias ni="npm install"
 alias setenv="bin/rails db:environment:set RAILS_ENV=development"
 
 # POSTGRES
@@ -77,5 +93,15 @@ alias hrun="herorun"
 # Scheme
 alias scheme="rlwrap -r -c -f /Users/sasha/Devdocs/mit_scheme_bindings.txt scheme"
 
+# NPM
+alias ni="npm install"
+
 # Yarn
 alias ys="yarn start"
+alias yv="yarn validate"
+alias validate="yv"
+alias yr="yarn relay"
+
+# BashStuff
+alias sshkey="cat ~/.ssh/id_rsa.pub | pbcopy"
+alias tarball="tar -cvzf"
